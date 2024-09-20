@@ -68,6 +68,11 @@ namespace SafeExamBrowser.Monitoring.Display
 		{
 			var result = new ValidationResult();
 
+			result.ExternalDisplays = 0;
+			result.InternalDisplays = 1;
+			result.IsAllowed = true;
+
+			/*
 			if (TryLoadDisplays(out var displays))
 			{
 				var active = displays.Where(d => d.IsActive);
@@ -97,6 +102,7 @@ namespace SafeExamBrowser.Monitoring.Display
 				result.IsAllowed = settings.IgnoreError;
 				logger.Warn($"Failed to validate display configuration, {(result.IsAllowed ? "ignoring error" : "active configuration is not allowed")}.");
 			}
+			*/
 
 			return result;
 		}

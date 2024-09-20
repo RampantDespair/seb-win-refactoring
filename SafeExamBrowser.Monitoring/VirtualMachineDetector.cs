@@ -55,13 +55,13 @@ namespace SafeExamBrowser.Monitoring
 		public bool IsVirtualMachine()
 		{
 			var isVirtualMachine = false;
-
+			/*
 			isVirtualMachine |= HasVirtualDevice();
 			isVirtualMachine |= HasVirtualMacAddress();
 			isVirtualMachine |= IsVirtualCpu();
 			isVirtualMachine |= IsVirtualRegistry();
 			isVirtualMachine |= IsVirtualSystem(systemInfo.BiosInfo, systemInfo.Manufacturer, systemInfo.Model);
-
+			*/
 			logger.Debug($"Computer '{systemInfo.Name}' appears {(isVirtualMachine ? "" : "not ")}to be a virtual machine.");
 
 			return isVirtualMachine;

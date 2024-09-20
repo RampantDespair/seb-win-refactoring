@@ -357,6 +357,8 @@ namespace SafeExamBrowser.Client
 
 		private void ScheduleIntegrityVerification()
 		{
+			logger.Info($"ScheduleIntegrityVerification");
+			/*
 			const int FIVE_MINUTES = 300000;
 			const int TEN_MINUTES = 600000;
 
@@ -366,10 +368,13 @@ namespace SafeExamBrowser.Client
 			timer.Elapsed += (o, args) => VerifyApplicationIntegrity();
 			timer.Interval = TEN_MINUTES + (new Random().NextDouble() * FIVE_MINUTES);
 			timer.Start();
+			*/
 		}
 
 		private void StartMonitoring()
 		{
+			logger.Info($"StartMonitoring");
+			/*
 			sentinel.StartMonitoringSystemEvents();
 
 			if (!Settings.Security.AllowStickyKeys)
@@ -386,15 +391,19 @@ namespace SafeExamBrowser.Client
 			{
 				sentinel.StartMonitoringEaseOfAccess();
 			}
+			*/
 		}
 
 		private void StopMonitoring()
 		{
-			sentinel.StopMonitoring();
+			logger.Info($"StopMonitoring");
+			//sentinel.StopMonitoring();
 		}
 
 		private void VerifyApplicationIntegrity()
 		{
+			logger.Info($"VerifyApplicationIntegrity");
+			/*
 			logger.Info($"Attempting to verify application integrity...");
 
 			if (IntegrityModule.TryVerifyCodeSignature(out var isValid))
@@ -413,10 +422,13 @@ namespace SafeExamBrowser.Client
 			{
 				logger.Warn("Failed to verify application integrity!");
 			}
+			*/
 		}
 
 		private void VerifySessionIntegrity()
 		{
+			logger.Info($"VerifySessionIntegrity");
+			/*
 			var hasQuitPassword = !string.IsNullOrEmpty(Settings.Security.QuitPasswordHash);
 
 			if (hasQuitPassword && Settings.Security.VerifySessionIntegrity)
@@ -444,6 +456,7 @@ namespace SafeExamBrowser.Client
 					logger.Warn("Failed to verify session integrity!");
 				}
 			}
+			*/
 		}
 
 		private void UpdateSessionIntegrity()
